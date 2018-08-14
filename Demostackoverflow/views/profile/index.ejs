@@ -1,0 +1,118 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>user profile form Responsive Widget Template :: W3layouts</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User Profile Form A Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<!-- css files -->
+<link href="cssprofile/style.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="cssprofile/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+<!-- //css files -->
+<!-- online-fonts -->
+<link href="//fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<!--//online-fonts -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="header">
+	<h1>user profile form</h1>
+</div>
+<div class="w3-main">
+		<div class="form-w3l">
+			<div class="img">
+				<img src="imagesprofile/profile.jpg" alt="image" id="images" style="border-radius: 4em;
+				border: 2px solid #fff;width: 200px;height: 200px;">
+				<h2>Your profile here</h2>
+			</div>
+			<div class="w3l-user">
+					<p>USERNAME:<p class="username"></p></p>
+					<div class="clear"></div>
+				</div>	
+				<div class="w3l-user">
+					<p>PHONE NUMBER:<p class="phone"></p></p>
+					<div class="clear"></div>
+				</div>
+				<div class="w3l-user">
+						<p>LANGUAGES KNOWN<p class="languages"></p></p>
+						<div class="clear"></div>
+					</div>
+				
+				<div class="w3l-user">
+					<p>GENDER:<p class="gender"></p></p>
+					<div class="clear"></div>
+				</div>
+				
+				<div class="w3l-user">
+					<p>SOCIAL:YOUTUBE:<p class="youtube"></p></p>
+					<div class="clear"></div>
+				</div>
+				<div class="w3l-user">
+						<p>SOCIAL:FACEBOOK:<p class="facebook"></p></p>
+						<div class="clear"></div>
+					</div>
+					<div class="w3l-user">
+							<p>SOCIAL:INSTAGRAM:<p class="instagram"></p></p>
+							<div class="clear"></div>
+						</div>
+						<div class="w3l-user">
+								<p>WEBSITE<p class="website"></p></p>
+								<div class="clear"></div>
+							</div>
+				<div class="w3l-user">	
+					<p>PORTFOLIO:<p class="portfolio"></p></p>
+					<div class="clear"></div>
+				</div>
+				<div class="w3l-user">	
+					<p>COUNTRY:<p class="country"></p></p>
+					<div class="clear"></div>
+				</div>
+		</div>
+	</div>
+	<script>
+			function CallWebAPI() {
+		   //console.log("hii");
+		//console.log(token);
+		  var usertoken= localStorage.getItem('token');
+		  console.log(usertoken);
+		// New XMLHTTPRequest
+		var request = new XMLHttpRequest();
+		request.open("GET", "http://localhost:3000/api/auth/profile", false);
+		request.setRequestHeader("Authorization", usertoken);
+		request.send();
+		var res1 =request.response;
+		setvalue(res1);	
+	}
+	CallWebAPI();
+	function setvalue(res1){
+		var res2 = JSON.parse(res1);
+		document.getElementById("images").src=res2.profilepic;
+		document.getElementsByClassName("phone")["0"].textContent=res2.phonenumber;
+		document.getElementsByClassName("gender")["0"].textContent=res2.gender;
+		document.getElementsByClassName("country")["0"].textContent=res2.profile.country;
+		document.getElementsByClassName("website")["0"].textContent=res2.profile.website;
+		document.getElementsByClassName("username")["0"].textContent=res2.profile.username;
+		document.getElementsByClassName("youtube")["0"].textContent=res2.profile.social.youtube;
+		document.getElementsByClassName("facebook")["0"].textContent=res2.profile.social.facebook;
+		document.getElementsByClassName("instagram")["0"].textContent=res2.profile.social.instagram;
+		document.getElementsByClassName("portfolio")["0"].textContent=res2.profile.portfolio;		
+		document.getElementsByClassName("languages")["0"].textContent=res2.profile.languages[0];				
+	}	
+			</script>
+</body>
+</html>

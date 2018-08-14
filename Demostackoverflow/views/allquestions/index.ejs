@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>HTML Template</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="/css5/bootstrap.min.css" />
+
+	<!-- Owl Carousel -->
+	<link type="text/css" rel="stylesheet" href="/css5/owl.carousel.css" />
+	<link type="text/css" rel="stylesheet" href="/css5/owl.theme.default.css" />
+
+	<!-- Magnific Popup -->
+	<link type="text/css" rel="stylesheet" href="/css5/magnific-popup.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="/css5/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="/css5/style.css" />
+</head>
+
+<body>
+	<!-- Header -->
+	<header id="home">
+		<!-- Background Image -->
+		<div class="bg-img" style="background-image: url('/img/background1.jpg');">
+			<div class="overlay"></div>
+		</div>
+		<!-- /Background Image -->
+
+
+		<!-- home wrapper -->
+		<p class="white-text" style="font-family: Georgia, 'Times New Roman', Times, serif;">THESE ARE THE QUESTIONS</p>
+		<div id="questions">
+		</div>
+				<!-- /home wrapper -->
+
+	</header>
+	<!-- /Header -->
+
+	
+	<!-- Footer -->
+	<footer id="footer" class="sm-padding bg-dark">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<div class="col-md-12">
+
+					<!-- footer logo -->
+					<div class="footer-logo">
+						<a href="index.html"><img src="img/logo-alt.png" alt="logo"></a>
+					</div>
+					<!-- /footer logo -->
+
+					<!-- footer follow -->
+					<ul class="footer-follow">
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+					</ul>
+					<!-- /footer follow -->
+
+					<!-- footer copyright -->
+					<div class="footer-copyright">
+						<p>Copyright © 2017. All Rights Reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+					</div>
+					<!-- /footer copyright -->
+
+				</div>
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</footer>
+	<!-- /Footer -->
+
+	<!-- Back to top -->
+	<div id="back-to-top"></div>
+	<!-- /Back to top -->
+
+	<!-- Preloader -->
+	<div id="preloader">
+		<div class="preloader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<!-- /Preloader -->
+	<script>
+	CallWebAPI();
+	function CallWebAPI() {
+    //console.log(token);
+    var usertoken= localStorage.getItem('token');
+    //console.log(usertoken);
+    // New XMLHTTPRequest
+    var request = new XMLHttpRequest();
+    request.open("GET", "http://localhost:3000/api/questions/", false);
+	request.setRequestHeader("Authorization", usertoken);  
+	request.send();
+	var res1=request.response;
+	var res=JSON.parse(res1);
+	for(i=0;i<res.length;i++){
+		var br= document.createElement("br");
+		var para = document.createElement("p");                      
+		var t = document.createTextNode(res[i].textone); 
+		para.setAttribute("class","white-text");						    
+		para.appendChild(t);                                          
+		document.getElementById("questions").appendChild(para);
+		document.getElementById("questions").appendChild(br);		
+		var span = document.createElement("span");
+		var t1= document.createTextNode(res[i].texttwo);
+		span.appendChild(t1);
+		document.getElementById("questions").appendChild(span);
+		document.getElementById("questions").appendChild(br);
+		for(j=0;j<res[i].answers.length;j++){
+			var p= document.createElement("p");
+			var t2= document.createTextNode(res[i].answers[j].text);
+			p.setAttribute("class","white-text");
+			p.appendChild(t2);
+			document.getElementById("questions").appendChild(p);
+		}
+		var button = document.createElement("input");
+		button.setAttribute("type","button");
+		button.setAttribute("class","btn btn-warning");
+		button.setAttribute("value","Answer please");
+		button.setAttribute("style","margin-left:400px;")
+		var res2="'"+res[i]._id+"'";
+		button.setAttribute("onclick", "questionid("+res2+")" );
+		document.getElementById("questions").appendChild(button);		
+	}
+}
+	function questionid(id){
+		localStorage.setItem("questionid",id);
+		window.location.href = "http://localhost:3000/answers";
+	}
+	</script>
+	<!-- jQuery Plugins -->
+	<script type="text/javascript" src="/js3/jquery.min.js"></script>
+	<script type="text/javascript" src="/js3/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js3/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="/js3/jquery.magnific-popup.js"></script>
+	<script type="text/javascript" src="/js3/main.js"></script>
+
+</body>
+
+</html>
