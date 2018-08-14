@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="style.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body style="background-color:goldenrod;">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+          <div class="form_main" style=" width: 100%;">
+                      <h4 class="heading" style="font-family: roboto;font-size: 20px;font-weight: 300;margin-bottom: 15px; margin-top: 20px;text-transform: uppercase;border-bottom: 1px solid #fcab0e;
+                      padding-bottom: 9px;
+                      position: relative;"><strong>Quick </strong> Contact <span style="background: #9e6600 none repeat scroll 0 0;
+                      bottom: -2px;
+                      height: 3px;
+                      left: 0;
+                      position: absolute;
+                      width: 75px;"></span></h4>
+                      <div class="form" style="border-radius: 7px;
+                      padding: 6px;">
+                          <section class="bg-primary" id="about">
+                              <div class="container">
+                                <div class="row">
+                                  <div class="col-lg-8 mx-auto text-center">
+                                    <h1>
+                              <span class="header">Profile</span>
+                              <span class="header">Updation</span>
+                              <span class="header">Form</span></h1>
+                            <!-- //title -->
+                            <!-- content -->
+                            <div class="sub-main-w3">
+                              <form id="myform" method="POST" action="/api/auth/">
+                                <div class="form-style-agile">
+                                  <label style="color:rgb(104, 9, 9);font-size:25px;margin-right:100px;">email</label>
+                                  <input style="border: 1px solid #ccc;
+                                  margin: 10px 0;
+                                  padding: 10px 0 10px 5px;
+                                  width: 100%;color: black" id="element" class="text" placeholder="email" name="email" type="text" required="" >
+                                </div>
+                                <div class="form-style-agile">
+                                  <label style="color:brown;font-size:25px;margin-right:100px;">Username</label>
+                                  <input id="element" style="border: 1px solid black;
+                                  margin: 10px 0;
+                                  padding: 10px 0 10px 5px;
+                                  width: 100%; color: black" class="text"  placeholder="Username" name="username" type="text" required="" >
+                                </div>
+                                  <div class="form-style-agile">
+                                  <label style="color:brown;font-size:25px;margin-right:100px;">
+                                    Website</label>
+                                  <input placeholder="Website" style="border: 1px solid #ccc;
+                                  margin: 10px 0;
+                                  padding: 10px 0 10px 5px;
+                                  width: 100%; color: black" class="text"  name="website" type="text" required="" >
+                                </div>
+                                  <div class="form-style-agile">
+                                  <label style="color:brown;font-size:25px;margin-right:100px;">
+                                    Country</label>
+                                  <input placeholder="Country" style="border: 1px solid #ccc;
+                                  margin: 10px 0;
+                                  padding: 10px 0 10px 5px;
+                                  width: 100%;color: black" class="text"  name="country" type="text" required="" autocomplete="country" >
+                                </div>
+                                <div class="form-style-agile">
+                                  <label style="color:brown;font-size:25px;margin-right:100px;">
+                                    Languages-known</label>
+                                  <input placeholder="programming languages" style="border: 1px solid #ccc;
+                                  margin: 10px 0;
+                                  padding: 10px 0 10px 5px;
+                                  width: 100%;color: black" class="text"  name="languages" type="text" required="" >
+                                </div>
+                                  <div class="form-style-agile">
+                                  <label style="color:brown;font-size:25px;margin-right:100px;">
+                                    Portfolio</label>
+                                  <input placeholder="Github etc." style="border: 1px solid #ccc;
+                                  margin: 10px 0;
+                                  padding: 10px 0 10px 5px;
+                                  width: 100%; color: black" name="portfolio" class="text"  type="text" required="" class="lebel" >
+                                </div>
+                                  <div class="form-style-agile">
+                                  <label style="color:brown;font-size:25px;margin-right:100px;">
+                                    Youtube</label>
+                                  <input placeholder="Link" style="border: 1px solid #ccc;
+                                  margin: 10px 0;
+                                  padding: 10px 0 10px 5px;
+                                  width: 100%;color: black" name="youtube" type="text" class="text"  required="" class="lebel" >
+                                </div>
+                                  <div class="form-style-agile">
+                                  <label style="color:brown;font-size:25px;margin-right:100px;">
+                                    Instragram</label>
+                                  <input placeholder="Account Url" style="border: 1px solid #ccc;
+                                  margin: 10px 0;
+                                  padding: 10px 0 10px 5px;
+                                  width: 100%;color: black" name="instagram" class="text"  type="text" required="" class="lebel" >
+                                </div>
+                                  <div class="form-style-agile">
+                                  <label style="color:brown;font-size:25px;margin-right:100px;">
+                                    Facebook</label>
+                                  <input placeholder="Account Url" style="border: 1px solid #ccc;
+                                  margin: 10px 0;
+                                  padding: 10px 0 10px 5px;
+                                  width: 100%;color: black" name="facebook" class="text"  type="text"  required="" >
+                                </div>
+                                <div id="parent"></div>
+                                <input type="submit" value="Submit" class="button button1" style="background: #242424 none repeat scroll 0 0;
+                                border: 1px solid #4f5c04;
+                                border-radius: 25px;
+                                color: #fff;
+                                font-size: 16px;
+                                font-style: normal;
+                                line-height: 35px;
+                                margin: 10px 0;
+                                padding: 0;
+                                text-transform: uppercase;
+                                width: 30%;" class="text">
+                              </form>
+                            </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </section>
+                  </div>
+                  </div>
+                </div>
+        </div>
+      </div>
+      <script>
+        var userid = localStorage.getItem('userid');
+        var input = document.createElement("input");
+        input.setAttribute('type', 'hidden');
+        input.setAttribute('value',userid);
+        input.setAttribute('name','userid');
+        var parent =  document.getElementById("parent");
+        parent.appendChild(input);
+      </script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
