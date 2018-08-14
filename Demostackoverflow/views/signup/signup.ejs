@@ -1,0 +1,90 @@
+<!--A Design by W3layouts 
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>stylish Sign in and Sign up Form A Flat Responsive widget Template :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="stylish Sign in and Sign up Form A Flat Responsive widget, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--online_fonts-->
+	<link href="//fonts.googleapis.com/css?family=Sansita:400,400i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+<!--//online_fonts-->
+    <link href="css/style.css" rel='stylesheet' type='text/css' media="all" /><!--stylesheet-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+                <div class="container">
+                  <a class="navbar-brand js-scroll-trigger" href="/">Demo stackoverflow</a>
+                  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#">signup</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/login">login</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+<h1> Sign up  form</h1>
+<div class="form-w3ls">
+	<div class="form-head-w3l">
+		<h2>s</h2>
+	</div>
+    <ul class="tab-group cl-effect-4">
+		<li class="tab"><a href="#signup-agile">Sign Up</a></li>        
+    </ul>
+    <div class="tab-content">
+		<div id="signup-agile">   
+			<form action="/api/auth/register" method="post" enctype="multipart/form-data">
+				
+				<p class="header">Name</p>
+                <input type="text" name="name" placeholder="Your Full Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Full Name';}" required="required">
+				<p class="header">User Name</p>                
+				<input type="text" name="username" placeholder="Your username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Full Name';}" required="required">
+				<p class="header">Email Address</p>
+				<input type="email" name="email" placeholder="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="required">
+				
+				<p class="header">Password</p>
+				<input type="password" name="password" placeholder="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="required">
+				
+				<p class="header">Confirm Password</p>
+				<input type="password" name="password1" placeholder="Confirm Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Confirm Password';}" required="required">
+                
+      <p class="header">Gender</p>   
+      <input type="text" name="gender" placeholder="Gender" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'gender';}" required="required">
+      <p class="header">Phonenumber</p>   
+      <input type="text" name="phonenumber" placeholder="phonenumber" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'phonenumber';}" required="required">
+      <div class="custom-file">
+          <input type="file" name="profilepic" class="custom-file-input" id="validatedCustomFile" required>
+          <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+          <p class="red">
+              <%= typeof message == 'undefined'? 'your messages here' : message %>
+          </p>
+      </div>				
+				<input type="submit" class="register" value="Sign up">
+			</form>
+		</div> 
+    </div><!-- tab-content -->
+</div> <!-- /form -->	  
+<p class="copyright">&copy; 2018 stylish sign in and sign up Form. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p>
+<!-- js files -->
+<script src='js/jquery.min.js'></script>
+<script src="js/index.js"></script>
+<!-- /js files -->
+</body>
+</html>
